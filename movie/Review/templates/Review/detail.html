@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div>
+    <div class="border p-3 my-3 mt-5 bg-body rounded">
+      <h1>{{ detail.title }}</h1>
+      <br>
+      <p>{{ detail.content }}</p>
+    </div>
+    <div class="text-end">
+      <a class="btn btn-outline-dark px-3" href="{% url 'Review:edit' detail.pk %}">수정</a>
+      <a class="btn btn-outline-danger px-3 ms-2" href="{% url 'Review:delete' detail.pk %}">삭제</a>
+      <a class="btn btn-primary px-3 ms-2" href="{% url 'Review:index' %}">목록으로</a>
+    </div>
+  </div>
+  {% endblock %}
